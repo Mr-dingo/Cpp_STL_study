@@ -25,7 +25,10 @@ int main(int argc, char const *argv[])
   }
   //접근
   int sora_value = name_score["Sora"];
+  //찾기, return값은 iterator
   map<string,int>::iterator iterator_ = name_score.find("ZZang");
-  
-  turn 0;
+  //갯수세기, key값에 해당하는 데이터의 갯수를 센다.(multimap 에서 유용할듯 하다.)
+  name_score.count("Sora");
+
+  return 0;
 }
