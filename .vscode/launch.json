@@ -9,14 +9,14 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/UnivProject/Queue/a.exe",
+            
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+            
             "preLaunchTask": "myLabel",
             "setupCommands": [
                 {
@@ -24,7 +24,19 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "windows": {
+                "program": "${workspaceFolder}/UnivProject/Queue/a.exe",
+                "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+            },
+            "linux": {
+                "program": "${workspaceFolder}/UnivProject/Queue/a.out",
+                "miDebuggerPath": "/usr/local/bin/gdb",
+            },
+            "osx": {
+                "program": "${workspaceFolder}/UnivProject/Queue/a.out",
+                "miDebuggerPath": "/usr/local/bin/gdb",
+            }
         }
     ]
 }

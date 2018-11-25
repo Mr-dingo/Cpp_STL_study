@@ -2,15 +2,10 @@
 #include <stdio.h>
 
 
-void key_input_size(int * n){
-    
-    return;
-}
 typedef struct Queue
 {
     struct Queue *next;
     int data;
-    /* data */
 } Queue;
 
 Queue* I_operator(Queue * target,int value);
@@ -67,7 +62,8 @@ void doOperation(char OpType,int value,Queue * head)
     else if(OpType == 'P')
     {
         Queue * findedQueue = findValue(value,head) ;
-        D_operator(findChild(findedQueue,head));
+        Queue * target = findChild(findedQueue,head);
+        D_operator( target);
     }
     else
     {
@@ -82,8 +78,8 @@ void initHead(Queue * head)
 }
 Queue* I_operator(Queue * target,int value)
 {
-    Queue *newQueue;
-    newQueue = (Queue*)malloc(sizeof(Queue));
+    Queue * newQueue = (Queue*)malloc(sizeof(Queue));
+    
     newQueue->data = value;
     newQueue->next = target->next;
     target->next = newQueue;
@@ -106,11 +102,12 @@ bool D_operator(Queue * target)
 int main(int argc, char const *argv[])
 {
     /* code */
-    Queue * head, * currQueue;
-    head = (Queue*)malloc(sizeof(Queue));
+    Queue * arrayQ = (Queue*)malloc(sizeof(Queue) * 100);
+    Queue * head = (Queue*)malloc(sizeof(Queue));
     head->next = NULL;
-
-    currQueue = head;
+    arrayQ[0];
+    arrayQ[1];
+    
     int inputSize;
     scanf("%d", &inputSize);
     for(int i = 0; i < inputSize; i++)
@@ -127,11 +124,7 @@ int main(int argc, char const *argv[])
         }
         
         doOperation(OpType,value , head);
-        //do operation
-
-        //        
-
-
+        
     }
     for(Queue * curQ = head->next; curQ; curQ = curQ->next)
     {
